@@ -1,0 +1,20 @@
+#deep-1
+
+meta {
+	version = "Sun Apr 24 15:52:46 CEST 2016";
+	description = "deep project file for SysP2016_Team11";
+}
+
+project SysP2016_Team11 {
+	libpath = "C:\Users\joel\Desktop\SysP16\deep_runtime_lib";
+	boardtype = ntbMpc555HB;
+	ostype = ntbSTS;
+	programmertype = ntbMpc555UsbBdi;
+
+#	enter names of rootclasses, e.g.
+#	rootclasses = "test.MyFirstTestClass","other.MySecondTestClass";
+	rootclasses = "ch.ntb.sysP2016.team11.Start";
+
+#	imgfile = "C:\Users\joel\Desktop\SysP16\workspace\SysP2016_Team11\SysP2016_Team11.bin";
+#	imgformat = BIN;
+}

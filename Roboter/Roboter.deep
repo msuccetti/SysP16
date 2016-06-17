@@ -1,0 +1,18 @@
+#deep-1
+
+meta {
+	version = "Wed Mar 02 13:40:23 CET 2016";
+	description = "deep project file for Roboter";
+}
+
+project Roboter {
+	libpath = "I:\deep\lib";
+	boardtype = ntbMpc555HB;
+	ostype = ntbSTS;
+	programmertype = ntbMpc555UsbBdi;
+
+#	The root classes to be loaded
+#	rootclasses = "test.MyFirstTestClass","other.MySecondTestClass";
+	rootclasses = "";
+
+}
