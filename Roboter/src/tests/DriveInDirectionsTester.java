@@ -2,6 +2,7 @@ package tests;
 
 import java.io.PrintStream;
 
+import robot.middleware.AllObjects;
 import robot.middleware.DriveInDirections;
 import ch.ntb.inf.deep.runtime.mpc555.driver.SCI;
 import ch.ntb.inf.deep.runtime.ppc32.Task;

@@ -1,18 +1,21 @@
-package tests;
+package robot.middleware;
 
-import robot.drivers.DcMotor;
-import robot.drivers.QuadratureEncoder;
-import robot.drivers.Wlan;
-import robot.middleware.DcMotorPositioner;
-import robot.middleware.DcMotorSpeedPID;
-import robot.middleware.DriveInDirections;
-import robot.middleware.DriveCtrl;
 import common.Consts;
 import common.Consts.DcMotorSpeedPIDSettings;
+import robot.cases.MPIOSM_DIO;
+import robot.cases.StateMachineMain;
+import robot.drivers.DcMotor;
+import robot.drivers.IrSensor;
+import robot.drivers.QuadratureEncoder;
+import robot.drivers.Wlan;
+import robot.drivers.StartButton;
 
 public class AllObjects
 {
 	// public static final AllObjects instance;
+	
+	//the start button
+	StartButton startButton = new StartButton();
 
 	// all encoders in a single array
 	public static QuadratureEncoder[] encoders = new QuadratureEncoder[]
@@ -132,13 +135,26 @@ public class AllObjects
 	};
 
 	
-//testing only !!!!!!!
-	public static DriveInDirections driveInDirections=new DriveInDirections();
-	
-	public static DriveCtrl driveCtrl=new DriveCtrl();
-	
-	//initialise wlan
+	//wlan
 	public static Wlan wlan = new Wlan();
 
+	//state machine
+	public static StateMachineMain mainStateMachine=new StateMachineMain();	
+
+	//IR sensors
+	public final static IrSensor IrSensorChassisRight=new IrSensor(Consts.Sensors.IR_SENSOR_CHASSIS_RIGHT_CHANNEL);
+	public final static IrSensor IrSensorChassisLeft=new IrSensor(Consts.Sensors.IR_SENSOR_CHASSIS_LEFT_CHANNEL);
+
+	//buttons
 	
+	public static StartButton button_start=new StartButton();
+
+
+
+
+	//testing only !!!!!!!
+		public static DriveInDirections driveInDirections=new DriveInDirections();
+		
+		public static DriveCtrl driveCtrl=new DriveCtrl();
+		
 }

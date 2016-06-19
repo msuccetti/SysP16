@@ -6,6 +6,7 @@ import ch.ntb.inf.deep.runtime.mpc555.driver.SCI;
 import ch.ntb.inf.deep.runtime.ppc32.Task;
 
 import common.Consts;
+import robot.middleware.AllObjects;
 
 /**
  * class to test the wlan adapter

@@ -2,30 +2,8 @@ package common;
 
 
 public class PinMap {
-	public static final boolean MOTORS_TPUA=true;
-	public static final int MOTOR_VL_PWM1 = 0;
-	public static final int MOTOR_VL_PWM2 = 1;
-	public static final int MOTOR_VR_PWM1 = 2;
-	public static final int MOTOR_VR_PWM2 = 3;
-	public static final int MOTOR_HL_PWM1 = 4;
-	public static final int MOTOR_HL_PWM2 = 5;
-	public static final int MOTOR_HR_PWM1 = 6;
-	public static final int MOTOR_HR_PWM2 = 7;
-	public static final int MOTOR_SM_PWM1 = 8;
-	public static final int MOTOR_SM_PWM2 = 9;
-	public static final int MOTOR_HM_PWM1 = 10;
-	public static final int MOTOR_HM_PWM2 = 11;
-	
 	public static final boolean SERVO_TPUA=true;
 	public static final int SERVO_PWM = 12;
-	
-	public static final boolean ENCODERS_TPUA=false;
-	public static final int ENCODER_VL_PWM = 0;// 2. PWM on next pin
-	public static final int ENCODER_VR_PWM = 2;// 2. PWM on next pin
-	public static final int ENCODER_HL_PWM = 4;// 2. PWM on next pin
-	public static final int ENCODER_HR_PWM = 6;// 2. PWM on next pin
-	public static final int ENCODER_SM_PWM = 8;// 2. PWM on next pin
-	public static final int ENCODER_HM_PWM = 10;// 2. PWM on next pin
 	
 	public static final int SWITCH_STOP = 13;
 	public static final int SWITCH_RESET = 14;

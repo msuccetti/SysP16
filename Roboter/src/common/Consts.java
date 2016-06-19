@@ -42,26 +42,33 @@ public class Consts
 				/ TPU_PWM.tpuTimeBase;
 		public static final int GEAR_RATIO = 112;
 
-		public static final float WHEEL_CIRCUMFERENCE = (float) (54.0 * 3.1415926);
+		public static final float WHEEL_CIRCUMFERENCE = (float) (54.0
+				* 3.1415926);
+
+		public static final int MOTOR_VL_PWM1 = 0;
+		public static final int MOTOR_VR_PWM1 = 4;
+		public static final int MOTOR_SM_PWM1 = 8;
+		public static final int MOTOR_HL_PWM1 = 0;
+		public static final int MOTOR_HR_PWM1 = 4;
+		public static final int MOTOR_HM_PWM1 = 8;
 
 		// Settings for all motors
 		public static final MotorSettings motorSettings[] =
 		{
 				// VL
-				new MotorSettings(INVERTED, TPU_A, 0),
+				new MotorSettings(INVERTED, TPU_A, MOTOR_VL_PWM1),
 				// VR
-				// new MotorSettings(INVERTED, TPU_A, 4),
+				// new MotorSettings(INVERTED, TPU_A, MOTOR_VR_PWM1),
 				// rewired due to damaged I/O
 				new MotorSettings(INVERTED, TPU_B, 12),
-				//SM
-				new MotorSettings(DIRECT, TPU_A, 8),
-				//HL
-				new MotorSettings(DIRECT, TPU_B, 0),
-				//HR
-				new MotorSettings(DIRECT, TPU_B, 4),
-				//HM
-				new MotorSettings(INVERTED, TPU_B, 8)
-		};
+				// SM
+				new MotorSettings(DIRECT, TPU_A, MOTOR_HL_PWM1),
+				// HL
+				new MotorSettings(DIRECT, TPU_B, MOTOR_HL_PWM1),
+				// HR
+				new MotorSettings(DIRECT, TPU_B, MOTOR_HR_PWM1),
+				// HM
+				new MotorSettings(INVERTED, TPU_B, MOTOR_HM_PWM1) };
 
 		// motor indices (see motorSettings[])
 		public final static int MOTOR_VL = 0;
@@ -94,38 +101,44 @@ public class Consts
 		}
 	}
 
+	public static final int ENCODER_VL_PWM = 6;// 2. PWM on next pin
+	public static final int ENCODER_VR_PWM = 2;// 2. PWM on next pin
+	public static final int ENCODER_SM_PWM = 10;// 2. PWM on next pin
+	public static final int ENCODER_HL_PWM = 6;// 2. PWM on next pin
+	public static final int ENCODER_HR_PWM = 2;// 2. PWM on next pin
+	public static final int ENCODER_HM_PWM = 10;// 2. PWM on next pin
+
 	// encoder
 	public static class Encoder
 	{
 		// period of encoder tasks [ms]
 		public static final int PERIOD = 5;
 		// pulses / revolution
-		public static final float TICKS_PER_ROTATION = 16 * 4 * DcMotors.GEAR_RATIO;
+		public static final float TICKS_PER_ROTATION = 16 * 4
+				* DcMotors.GEAR_RATIO;
 		// Settings for all encoders
 		public static final EncoderSettings encoderSettings[] =
 		{
-				/*
-				 * new EncoderSettings(DIRECT, TPU_A, 6, TICKS_PER_ROTATION,//VL
-				 * DcMotors.WHEEL_CIRCUMFERENCE),
-				 */
-				// VL rewired due to damaged I/O
-				new EncoderSettings(DIRECT, TPU_B, 14, TICKS_PER_ROTATION,
-						DcMotors.WHEEL_CIRCUMFERENCE),
+				// VL
+				new EncoderSettings(DIRECT, TPU_A, ENCODER_VL_PWM,
+						TICKS_PER_ROTATION, DcMotors.WHEEL_CIRCUMFERENCE),
+
 				// VR
-				new EncoderSettings(INVERTED, TPU_A, 2, TICKS_PER_ROTATION,
-						DcMotors.WHEEL_CIRCUMFERENCE),
+				new EncoderSettings(INVERTED, TPU_A, ENCODER_VR_PWM,
+						TICKS_PER_ROTATION, DcMotors.WHEEL_CIRCUMFERENCE),
 				// SM
-				new EncoderSettings(INVERTED, TPU_B, 10, TICKS_PER_ROTATION,
-						(float) 1.25),
+				new EncoderSettings(INVERTED, TPU_B, ENCODER_SM_PWM,
+						TICKS_PER_ROTATION, (float) 1.25),
 				// HL
-				new EncoderSettings(DIRECT, TPU_B, 6, TICKS_PER_ROTATION,
-						DcMotors.WHEEL_CIRCUMFERENCE),
+				new EncoderSettings(DIRECT, TPU_B, ENCODER_HL_PWM,
+						TICKS_PER_ROTATION, DcMotors.WHEEL_CIRCUMFERENCE),
 				// HR
-				new EncoderSettings(INVERTED, TPU_B, 2, TICKS_PER_ROTATION,
-						DcMotors.WHEEL_CIRCUMFERENCE),
+				new EncoderSettings(INVERTED, TPU_B, ENCODER_HR_PWM,
+						TICKS_PER_ROTATION, DcMotors.WHEEL_CIRCUMFERENCE),
 				// HM
-				new EncoderSettings(INVERTED, TPU_A, 10, TICKS_PER_ROTATION,
-						(float) 1.25) };
+				new EncoderSettings(INVERTED, TPU_A, ENCODER_HM_PWM,
+						TICKS_PER_ROTATION, (float) 1.25) };
+
 		// encoder indices (see encoderSettings[])
 		public final static int ENCODER_VL = 0;
 		public final static int ENCODER_VR = 1;
@@ -187,8 +200,10 @@ public class Consts
 
 	// Servo
 	public static final int SERVO_PWM_PERIOD = 20000000 / TPU_PWM.tpuTimeBase;
-	public static final short SERVO_RETRACTED_POS = 750000 / TPU_PWM.tpuTimeBase;
-	public static final short SERVO_EXTENDED_POS = 2550000 / TPU_PWM.tpuTimeBase;
+	public static final short SERVO_RETRACTED_POS = 750000
+			/ TPU_PWM.tpuTimeBase;
+	public static final short SERVO_EXTENDED_POS = 2550000
+			/ TPU_PWM.tpuTimeBase;
 
 	// IR sensors
 	public static class IrSensors
@@ -230,15 +245,32 @@ public class Consts
 		 * reset pin of wlan adapter
 		 */
 		public final static int WLAN_RESET_PIN = 5;
-		
+
 		/**
 		 * Wlan task period [ms]
 		 */
 		public final static int PERIOD = 1000;
-		
 
 	}
+	
+	//sensors
+	public static class Sensors
+	{
+		//channels of IR sensors
+		public static final int IR_SENSOR_CHASSIS_RIGHT_CHANNEL=0;
+		public static final int IR_SENSOR_CHASSIS_LEFT_CHANNEL=1;
+	}
+	
+	//buttons
+	public static class Buttons
+	{
+		 // Wait time for button cycles to be counted stable [ms]
+		public static final int WAIT_TIME_STABLE=100;
+		 // the I/O pin to connect the start button to
+		public static final byte IO_BUTTON_START = 89;
+	}
 
+	
 	// Software
 	public static final int LOG_LEVEL = Logger.STATE_INFO_DETAILED;
 
@@ -246,12 +278,18 @@ public class Consts
 
 	public static final int TEST_MOTOR_PWM_PERIOD = Short.MAX_VALUE
 			/ TPU_PWM.tpuTimeBase;
-	
+
 	public class StateMachine
 	{
 		/**
 		 * task period [ms]
 		 */
 		public final static int PERIOD = 1000;
+
+		// robot was placed at the right border is true
+		private static final boolean PLACED_AT_RIGHT_BORDER = true;
+		// robot was placed at the right border is true
+		private static final boolean PLACED_AT_LEFT_BORDER = false;
+
 	}
 }

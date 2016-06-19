@@ -1,7 +1,6 @@
 package robot.middleware;
 
 import common.Consts;
-import tests.AllObjects;
 
 /**
  * Drives the robot for certain distances in certain directions or turns a

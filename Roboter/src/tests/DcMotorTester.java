@@ -4,6 +4,7 @@ import java.io.PrintStream;
 
 import common.Consts;
 import robot.drivers.DcMotor;
+import robot.middleware.AllObjects;
 import ch.ntb.inf.deep.runtime.mpc555.driver.SCI;
 import ch.ntb.inf.deep.runtime.ppc32.Task;
 
